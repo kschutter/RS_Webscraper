@@ -7,7 +7,6 @@ from bs4 import BeautifulSoup
 def get_title():
     # Return Title and episode number as tup
 
-
     full_title = soup.find('a', {'class': "journal-entry-navigation-current"}).contents[0]
     start_ind = full_title.find('-')
 
@@ -18,7 +17,6 @@ def get_title():
             break
     if not has_num:
         return -1, -1
-
 
     if start_ind == -1:
         start_ind = full_title.find(':')
@@ -70,7 +68,6 @@ def clean_title(title):
         
     return title
 
-
 def download_episode(title):
     # Downloads the current episode soup is linked to 
 
@@ -80,7 +77,6 @@ def download_episode(title):
     f.write(audio)
     f.close()
     print("Finished downloading", title)
-
 
 if __name__ == '__main__':
 
