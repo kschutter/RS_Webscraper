@@ -93,8 +93,8 @@ if __name__ == '__main__':
         soup = BeautifulSoup(html, "html.parser")
         title, ep_num = get_title()
 
-        # Sleep every 14 episodes to avoid HTTP Error 429
-        if len(ep_list) != idx + 1 and not (len(ep_list) - idx + 1) % 14:
+        # Sleep every few episodes to avoid HTTP Error 429
+        if len(ep_list) != idx + 1 and not (len(ep_list) - idx + 1) % 5:
             time.sleep(30)
 
         if title == -1:
