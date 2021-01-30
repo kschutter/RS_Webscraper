@@ -95,6 +95,7 @@ if __name__ == '__main__':
 
         # Sleep every few episodes to avoid HTTP Error 429
         if len(ep_list) != idx + 1 and not (len(ep_list) - idx + 1) % 5:
+            print("Sleeping 30 seconds...")
             time.sleep(30)
 
         if title == -1:
